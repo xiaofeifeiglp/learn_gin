@@ -24,5 +24,14 @@ func main() {
 		//定义delete请求
 		v1.DELETE("/users/:id", controllers.DeleteUser)
 	}
+
+	// 创建v2组
+	v2 := r.Group("/v2")
+	{
+		//获取name参数, 通过Query获取的参数值是String类型。
+		v2.GET("/users/query", controllers.Query)
+		v2.GET("/users/defaultQuery", controllers.DefaultQuery)
+		v2.GET("/users/getQuery", controllers.GetQuery)
+	}
 	r.Run(":8080") // 启动服务，并监听 8080 端口
 }

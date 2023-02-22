@@ -28,3 +28,4 @@ func UpdateUser(c *gin.Context) {
 func DeleteUser(c *gin.Context) {
     
 }
+
