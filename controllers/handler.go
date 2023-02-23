@@ -17,6 +17,9 @@ func DefaultQuery(c *gin.Context) {
 
 //获取id参数, 通过GetQuery获取的参数值也是String类型
 func GetQuery(c *gin.Context) {
+	// 获取url参数id
+	id := c.Param("id")
+	fmt.Print(id)
 	dd, ok := c.GetQuery("id")
 	fmt.Print(dd, ok)
 }
