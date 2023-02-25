@@ -41,7 +41,7 @@ func DoLogin(c *gin.Context) {
     }
 
 	// 通过请求上下文对象Context, 直接往客户端返回一个字符串
-	c.String(200, "username=%s,password=%s", username,password)
+	c.String(200, "username=%s,password=%s,password1=%s", username, password, password)
 }
 
 func UpdateUser(c *gin.Context) {

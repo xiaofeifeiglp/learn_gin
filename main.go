@@ -6,8 +6,8 @@ import (
 )
 
 func main() {
+	// 学习框架链接: https://www.tizi365.com/archives/244.html
 	r := gin.Default()
-
 	// 创建v1组
 	v1 := r.Group("/v1")
 	{
@@ -32,6 +32,11 @@ func main() {
 		v2.GET("/users/query", controllers.Query)
 		v2.GET("/users/defaultQuery", controllers.DefaultQuery)
 		v2.GET("/users/getQuery", controllers.GetQuery)
+		v2.GET("/users/handlejson", controllers.HandlerJson)
+		v2.GET("/users/handlexml", controllers.HandlelXml)
+		v2.GET("/users/handlefile", controllers.HandlelFile)
+		v2.GET("/users/handlefileattachment", controllers.HandlelFileAttachment)
+		v2.GET("/users/handlehttp", controllers.HandlelHttp)
 	}
 	r.Run(":8080") // 启动服务，并监听 8080 端口
 }
